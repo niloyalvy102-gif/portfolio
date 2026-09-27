@@ -29,12 +29,22 @@
             scroll-behavior: smooth;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Outfit', sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
+        }
+
+        /* Fix for fixed-nav overlapping sections when jumping via anchor links */
+        header,
+        section {
+            scroll-margin-top: 110px;
         }
 
         /* Particle Canvas Background */
@@ -355,6 +365,33 @@
             margin-bottom: 20px;
         }
 
+        .project-card .skill-tags {
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--card-border);
+            padding-top: 15px;
+            margin-top: auto;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 12px;
+            text-shadow: var(--glow);
+        }
+
+        .project-link i {
+            font-size: 0.8rem;
+        }
+
         /* Education Grid */
         .edu-grid {
             display: grid;
@@ -394,6 +431,17 @@
         .info-item i {
             font-size: 1.5rem;
             color: var(--primary);
+        }
+
+        .info-item {
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .info-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: var(--glow);
         }
 
         .social-links {
@@ -469,6 +517,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -480,7 +529,7 @@
                 <h3>Hello, I'm</h3>
                 <h1>Alvy Rahman Niloy</h1>
                 <div class="subtitle">I am a <span class="typed-text" id="typed"></span></div>
-                <p>Computer Science graduate specializing in Python, SQL, ETL pipeline development, and Machine Learning. Passionate about transforming raw data into actionable business intelligence[cite: 2].</p>
+                <p>Computer Science graduate specializing in Python, SQL, ETL pipeline development, and Machine Learning. Passionate about transforming raw data into actionable business intelligence.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
                     <a href="https://github.com/niloyalvy102-gif" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
@@ -548,7 +597,7 @@
                 <div class="timeline-date">JAN 2026 - APR 2026</div>
                 <h3>Data Analyst Intern</h3>
                 <h4 style="color: var(--text-muted); font-weight: 400; margin-bottom: 10px;">Solver Agropharma LTD</h4>
-                <p>Assisted in organizing business data using Microsoft Excel. Prepared structured analytical reports and supported data-driven decision-making processes while ensuring high data accuracy and consistency across company records[cite: 2].</p>
+                <p>Assisted in organizing business data using Microsoft Excel. Prepared structured analytical reports and supported data-driven decision-making processes while ensuring high data accuracy and consistency across company records.</p>
             </div>
         </div>
     </section>
@@ -560,35 +609,86 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>Saviour – Blood Donation Web App</h3>
-                    <p>Developed a responsive blood donation web application with interactive features for connecting blood donors and recipients seamlessly[cite: 2].</p>
+                    <p>Developed a responsive blood donation web application with interactive features for connecting blood donors and recipients seamlessly.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Web Dev</span>
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">JS</span>
+                    </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="tag">Web Dev</span>
-                    <span class="tag">UI/UX</span>
-                    <span class="tag">JS</span>
-                </div>
+                <a href="https://github.com/niloyalvy102-gif" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
             <div class="project-card glass reveal">
                 <div>
                     <h3>Diabetes Prediction Application</h3>
-                    <p>Built an end-to-end Machine Learning application for predicting diabetes risk using data preprocessing, feature engineering, and model evaluation[cite: 2].</p>
+                    <p>Built an end-to-end Machine Learning application for predicting diabetes risk using data preprocessing, feature engineering, and model evaluation.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Pandas</span>
+                    </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Pandas</span>
-                </div>
+                <a href="https://github.com/niloyalvy102-gif" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
             <div class="project-card glass reveal">
                 <div>
                     <h3>Power BI Business Dashboard</h3>
-                    <p>Created interactive corporate dashboards tailored for real-time KPI tracking, trend analysis, and comprehensive business performance visualization[cite: 2].</p>
+                    <p>Created interactive corporate dashboards tailored for real-time KPI tracking, trend analysis, and comprehensive business performance visualization.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">ETL</span>
+                        <span class="tag">Data Visualization</span>
+                    </div>
                 </div>
-                <div class="skill-tags">
-                    <span class="tag">Power BI</span>
-                    <span class="tag">ETL</span>
-                    <span class="tag">Data Visualization</span>
+                <a href="https://github.com/niloyalvy102-gif" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="project-card glass reveal">
+                <div>
+                    <h3>ZStore – DBMS Project</h3>
+                    <p>Designed and implemented a relational database management system for an e-commerce style store, covering schema design, normalization, stored procedures, and query optimization.</p>
+                    <div class="skill-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">DBMS</span>
+                        <span class="tag">Database Design</span>
+                    </div>
                 </div>
+                <a href="https://github.com/niloyalvy102-gif" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="project-card glass reveal">
+                <div>
+                    <h3>Alzheimer's Detection – Thesis</h3>
+                    <p>Research thesis applying machine learning and image analysis techniques to detect Alzheimer's disease from medical imaging data, focused on model accuracy and interpretability.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Healthcare AI</span>
+                    </div>
+                </div>
+                <a href="https://github.com/niloyalvy102-gif" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="project-card glass reveal">
+                <div>
+                    <h3>Next-Gen Human Following Robot</h3>
+                    <p>Built an IoT-integrated robot capable of detecting and autonomously following a human target, combining sensor fusion, embedded control, and remote monitoring.</p>
+                    <div class="skill-tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Embedded Systems</span>
+                    </div>
+                </div>
+                <a href="https://github.com/niloyalvy102-gif" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="project-card glass reveal">
+                <div>
+                    <h3>Custom Language Compiler</h3>
+                    <p>Designed and implemented a compiler for a custom programming language, covering lexical analysis, parsing, semantic analysis, and code generation.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Compiler Design</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Language Theory</span>
+                    </div>
+                </div>
+                <a href="https://github.com/niloyalvy102-gif" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
         </div>
     </section>
@@ -620,27 +720,27 @@
         <h2 class="section-title reveal">Get In <span>Touch</span></h2>
         <div class="contact-container">
             <div class="contact-info">
-                <div class="info-item glass reveal">
+                <a href="mailto:niloy.alvy102@gmail.com" class="info-item glass reveal" style="text-decoration:none; color:inherit;">
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>Email</h4>
                         <p>niloy.alvy102@gmail.com</p>
                     </div>
-                </div>
-                <div class="info-item glass reveal">
+                </a>
+                <a href="tel:+8801796589660" class="info-item glass reveal" style="text-decoration:none; color:inherit;">
                     <i class="fas fa-phone"></i>
                     <div>
                         <h4>Phone</h4>
                         <p>+880 1796589660</p>
                     </div>
-                </div>
-                <div class="info-item glass reveal">
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rupnagar%2C+Mirpur%2C+Dhaka-1216%2C+Bangladesh" target="_blank" class="info-item glass reveal" style="text-decoration:none; color:inherit;">
                     <i class="fas fa-location-dot"></i>
                     <div>
                         <h4>Location</h4>
                         <p>Rupnagar, Mirpur, Dhaka-1216, Bangladesh</p>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="glass reveal" style="padding: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <h3 style="margin-bottom: 20px;">Connect With Me</h3>
