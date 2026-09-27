@@ -127,6 +127,52 @@
             text-shadow: var(--glow);
         }
 
+        /* Mobile Hamburger Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        /* Mobile Dropdown Menu */
+        .nav-links-mobile {
+            display: none;
+            position: fixed;
+            top: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 88%;
+            max-width: 1100px;
+            flex-direction: column;
+            list-style: none;
+            padding: 15px 10px;
+            z-index: 999;
+            gap: 5px;
+        }
+
+        .nav-links-mobile.open {
+            display: flex;
+        }
+
+        .nav-links-mobile a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .nav-links-mobile a:hover {
+            color: var(--primary);
+            background: rgba(255,255,255,0.05);
+        }
+
         /* Hero Section */
         header {
             min-height: 100vh;
@@ -182,6 +228,7 @@
         .hero-btns {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -498,6 +545,9 @@
             .nav-links {
                 display: none;
             }
+            .nav-toggle {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -520,7 +570,18 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
+    <ul class="nav-links-mobile glass" id="nav-links-mobile">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
     <!-- Header / Hero Section -->
     <header id="about">
@@ -532,6 +593,7 @@
                 <p>Computer Science graduate specializing in Python, SQL, ETL pipeline development, and Machine Learning. Passionate about transforming raw data into actionable business intelligence.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+                    <a href="resume.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Resume</a>
                     <a href="https://github.com/niloyalvy102-gif" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
@@ -609,7 +671,7 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>Saviour – Blood Donation Web App</h3>
-                    <p>Developed a responsive blood donation web application with interactive features for connecting blood donors and recipients seamlessly.</p>
+                    <p>A full-stack web platform that matches blood donors with recipients by blood group and location, with donor search, request posting, and a responsive UI built for fast, low-friction use during emergencies.</p>
                     <div class="skill-tags">
                         <span class="tag">Web Dev</span>
                         <span class="tag">UI/UX</span>
@@ -621,7 +683,7 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>Diabetes Prediction Application</h3>
-                    <p>Built an end-to-end Machine Learning application for predicting diabetes risk using data preprocessing, feature engineering, and model evaluation.</p>
+                    <p>An end-to-end ML pipeline that predicts diabetes risk from patient health metrics — covering data cleaning, feature engineering, model training and comparison, and evaluation using standard classification metrics.</p>
                     <div class="skill-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Machine Learning</span>
@@ -633,7 +695,7 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>Power BI Business Dashboard</h3>
-                    <p>Created interactive corporate dashboards tailored for real-time KPI tracking, trend analysis, and comprehensive business performance visualization.</p>
+                    <p>An interactive Power BI dashboard built on a cleaned and modeled dataset — with drill-down KPI cards, trend charts, and filters that let stakeholders track business performance without touching raw data.</p>
                     <div class="skill-tags">
                         <span class="tag">Power BI</span>
                         <span class="tag">ETL</span>
@@ -645,7 +707,7 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>ZStore – DBMS Project</h3>
-                    <p>Designed and implemented a relational database management system for an e-commerce style store, covering schema design, normalization, stored procedures, and query optimization.</p>
+                    <p>A relational database designed from scratch for an e-commerce store — normalized schema, entity-relationship modeling, stored procedures for order and inventory logic, and optimized queries for common storefront operations.</p>
                     <div class="skill-tags">
                         <span class="tag">SQL</span>
                         <span class="tag">DBMS</span>
@@ -657,7 +719,7 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>Alzheimer's Detection – Thesis</h3>
-                    <p>Research thesis applying machine learning and image analysis techniques to detect Alzheimer's disease from medical imaging data, focused on model accuracy and interpretability.</p>
+                    <p>Undergraduate thesis research applying machine learning to MRI-based brain imaging data to classify Alzheimer's stages — covering image preprocessing, model selection, and evaluation against clinical labels, with emphasis on result interpretability.</p>
                     <div class="skill-tags">
                         <span class="tag">Machine Learning</span>
                         <span class="tag">Research</span>
@@ -669,7 +731,7 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>Next-Gen Human Following Robot</h3>
-                    <p>Built an IoT-integrated robot capable of detecting and autonomously following a human target, combining sensor fusion, embedded control, and remote monitoring.</p>
+                    <p>An autonomous robot that detects and tracks a human target in real time using onboard sensors, with embedded microcontroller logic for motor control and IoT connectivity for remote monitoring and status updates.</p>
                     <div class="skill-tags">
                         <span class="tag">IoT</span>
                         <span class="tag">Robotics</span>
@@ -681,7 +743,7 @@
             <div class="project-card glass reveal">
                 <div>
                     <h3>Custom Language Compiler</h3>
-                    <p>Designed and implemented a compiler for a custom programming language, covering lexical analysis, parsing, semantic analysis, and code generation.</p>
+                    <p>A compiler built from the ground up for a self-designed programming language — implementing a lexer and tokenizer, a recursive-descent parser producing an AST, semantic/type checking, and a code generation backend.</p>
                     <div class="skill-tags">
                         <span class="tag">Compiler Design</span>
                         <span class="tag">C</span>
@@ -759,6 +821,24 @@
 
     <!-- JavaScript Animations & Interactions -->
     <script>
+        // Mobile Nav Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinksMobile = document.getElementById('nav-links-mobile');
+        navToggle.addEventListener('click', () => {
+            navLinksMobile.classList.toggle('open');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+        navLinksMobile.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksMobile.classList.remove('open');
+                const icon = navToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
         // Smooth Cursor Ambient Light Track
         const cursor = document.getElementById('cursor-glow');
         document.addEventListener('mousemove', (e) => {
